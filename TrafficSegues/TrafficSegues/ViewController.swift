@@ -15,14 +15,20 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
        
     }
-    override func prepare(for segue: UIStoryboardSegue, sender:
-        Any?) {
-        segue.destination.navigationItem.title = textField.text
-    }
-    @IBAction func unwindToRed(unwindSegue: UIStoryboardSegue){
-        
-    }
 
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var segueSwitch: UISwitch!
+    
+    @IBAction func YellowButtonTapped(_ sender: Any) {
+        if segueSwitch.isOn {
+            performSegue(withIdentifier: "Yellow", sender: nil)
+        }
+    }
+    
+    @IBAction func GreenButtonTapped(_ sender: Any) {
+        if segueSwitch.isOn{
+            performSegue(withIdentifier: "Green", sender: nil)
+        }
+    }
+    
+    
 }
-

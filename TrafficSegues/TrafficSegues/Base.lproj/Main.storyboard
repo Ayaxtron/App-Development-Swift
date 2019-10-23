@@ -18,33 +18,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPr-ug-3YO">
-                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzf-7o-R4c">
+                                <rect key="frame" x="57" y="318" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Push to Yellow"/>
                                 <connections>
-                                    <segue destination="mNu-cz-Qsp" kind="show" id="mLr-Y6-OoQ"/>
+                                    <action selector="YellowButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ybc-sc-zHT"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lDd-8f-4Wz">
-                                <rect key="frame" x="139" y="280" width="97" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMA-CM-P7v">
+                                <rect key="frame" x="213" y="318" width="98" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <state key="normal" title="Push to Green"/>
+                                <connections>
+                                    <action selector="GreenButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IWR-zv-s83"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="68F-vI-Frj">
+                                <rect key="frame" x="164" y="385" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.71934326732608811" blue="0.54995300258001334" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="bPr-ug-3YO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U7a-y2-sUW"/>
-                            <constraint firstItem="bPr-ug-3YO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hhg-Zi-TWx"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Red" id="0Ag-ib-mBw">
                         <barButtonItem key="backBarButtonItem" title="Go to red" id="yVs-Ok-YoH"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="textField" destination="lDd-8f-4Wz" id="B3A-a1-MXP"/>
+                        <outlet property="segueW" destination="68F-vI-Frj" id="pfs-Vc-ofC"/>
+                        <segue destination="mNu-cz-Qsp" kind="show" identifier="Yellow" id="aov-XM-zek"/>
+                        <segue destination="MGN-g3-bx5" kind="show" identifier="Green" id="sfD-8Y-o3p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -58,20 +62,7 @@
                     <view key="view" contentMode="scaleToFill" id="Tc2-Ir-QY7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LG0-Hv-nOr">
-                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="MGN-g3-bx5" kind="show" id="crd-Ze-hkt"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.99277082067428246" green="1" blue="0.54456168676631023" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="LG0-Hv-nOr" firstAttribute="centerY" secondItem="Tc2-Ir-QY7" secondAttribute="centerY" id="WeL-QN-eVe"/>
-                            <constraint firstItem="LG0-Hv-nOr" firstAttribute="centerX" secondItem="Tc2-Ir-QY7" secondAttribute="centerX" id="kBU-TV-De6"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="s5S-tc-kHi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Yellow" largeTitleDisplayMode="never" id="hRu-Ol-uai">
@@ -80,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFt-fo-4OT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="106.59670164917542"/>
+            <point key="canvasLocation" x="1852" y="-292"/>
         </scene>
         <!--Green-->
         <scene sceneID="4Z4-2x-dMe">
@@ -103,7 +94,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6iw-E6-hkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="m9w-h3-ble" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2560.8000000000002" y="106.59670164917542"/>
+            <point key="canvasLocation" x="1852" y="381"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qyy-vP-KjH">
