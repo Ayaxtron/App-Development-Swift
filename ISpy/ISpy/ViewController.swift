@@ -13,12 +13,17 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        var delegate: UIScrollViewDelegate?
+        scrollView.delegate = self
     }
 
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var imageView: UIImageView!
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
+    
     
     
 }
