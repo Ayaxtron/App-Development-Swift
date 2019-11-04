@@ -14,6 +14,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         scrollView.delegate = self
+        
+        updateZoomFor(size: view.bounds.size)
     }
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -24,7 +26,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         return imageView
     }
     
-    
+    func updateZoomFor(size: CGSize){
+        let widthScale = size.width / imageView.bounds.width
+        let heightScale = size.height / imageView.bounds.height
+        let scale = min(widthScale, heightScale)
+        scrollView.minimumZoomScale = scale
+    }
     
 }
 
