@@ -113,4 +113,4 @@ class EmojiTableViewController: UITableViewController {
     */
 
 }
-}
+
